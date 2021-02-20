@@ -60,7 +60,7 @@ while run:
                 toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
                 toponym_coodrinates = toponym["Point"]["pos"].split()
                 met.append(','.join(toponym_coodrinates))
-                x, y = toponym_coodrinates[0], toponym_coodrinates[1]
+                x, y = float(toponym_coodrinates[0]), float(toponym_coodrinates[1])
                 screen.blit(pygame.image.load(get_map(x, y, m, l, met)), (0, 0))
                 pygame.display.flip()
             else:
